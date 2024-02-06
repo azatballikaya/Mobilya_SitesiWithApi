@@ -174,3 +174,4 @@ C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Ap
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Api\obj\Debug\net7.0\Mobilya.Api.pdb
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Api\obj\Debug\net7.0\Mobilya.Api.genruntimeconfig.cache
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Api\obj\Debug\net7.0\ref\Mobilya.Api.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Api\obj\Debug\net7.0\Mobilya.Api.sourcelink.json

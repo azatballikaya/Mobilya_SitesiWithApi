@@ -32,3 +32,4 @@ C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Da
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.DataAccess\obj\Debug\net7.0\Mobilya.DataAccess.pdb
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.DataAccess\obj\Debug\net7.0\Mobilya.DataAccess.genruntimeconfig.cache
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.DataAccess\obj\Debug\net7.0\ref\Mobilya.DataAccess.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.DataAccess\obj\Debug\net7.0\Mobilya.DataAccess.sourcelink.json

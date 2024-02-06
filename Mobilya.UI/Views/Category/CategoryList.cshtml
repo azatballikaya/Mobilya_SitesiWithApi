@@ -1,0 +1,32 @@
+﻿@model List<CategoryViewModel>
+@{
+    ViewData["Title"] = "CategoryList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Kategoriler</h2>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Kategori Id</th>
+            <th>Kategori Ad</th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.CategoryId</td>
+                <td>@category.CategoryName</td>
+             
+                <td>
+                   
+                    <a href="/Category/CategoryDelete/@category.CategoryId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

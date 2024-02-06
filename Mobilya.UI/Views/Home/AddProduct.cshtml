@@ -1,0 +1,29 @@
+﻿@model AddProductViewModel
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ürün Ekleme Sayfası</h1>
+<form action="/Home/AddProduct" method="post">
+    <div class="mb-3">
+        <label for="ProductName" class="form-label">Ürün Adı</label>
+        <input type="text" name="ProductName" class="form-control" >
+       
+    </div>
+    <div class="mb-3">
+        <label for="Price" class="form-label">Ürün Fiyatı</label>
+        <input type="text" name="Price" class="form-control">
+    </div>
+    <div class="mb-3 ">
+        <label for="Description" class="form-label">Açıklama</label>
+        <input type="text" name="Description" class="form-control" >
+    </div>
+    <div class="mb-3 ">
+        <label for="Image" class="form-label">Resim</label>
+        <input type="file" name="Image" class="form-control">
+    </div>
+    <select name="CategoryId" asp-items="@ViewBag.Categories"></select>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "AddAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Admin Kayıt Sayfası</h1>
+<form action="/Admin/AddAdmin" method="post">
+    <div class="mb-3">
+        <label for="ProductName" class="form-label">Admin Kullanıcı Adı: </label>
+        <input type="text" name="UserName" class="form-control">
+
+    </div>
+    <div class="mb-3">
+        <label for="Price" class="form-label">Şifre: </label>
+        <input type="password" name="Password" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+

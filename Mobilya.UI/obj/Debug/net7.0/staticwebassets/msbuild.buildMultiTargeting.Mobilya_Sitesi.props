@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Mobilya_Sitesi.props" />
+</Project>

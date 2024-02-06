@@ -1,0 +1,16 @@
+﻿@model AddCategoryViewModel
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kategori Ekleme Sayfası</h1>
+<form action="/Category/AddCategory" method="post">
+    <div class="mb-3">
+        <label for="CategoryName" class="form-label">Kategori Adı</label>
+        <input type="text" name="CategoryName" class="form-control">
+        <br />
+        <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

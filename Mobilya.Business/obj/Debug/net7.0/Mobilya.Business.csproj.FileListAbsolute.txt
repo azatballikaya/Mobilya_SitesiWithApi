@@ -32,3 +32,4 @@ C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Bu
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Business\obj\Debug\net7.0\refint\Mobilya.Business.dll
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Business\obj\Debug\net7.0\Mobilya.Business.pdb
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Business\obj\Debug\net7.0\ref\Mobilya.Business.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya.Business\obj\Debug\net7.0\Mobilya.Business.sourcelink.json
