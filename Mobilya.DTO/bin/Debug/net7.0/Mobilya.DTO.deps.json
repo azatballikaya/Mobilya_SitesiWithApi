@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Mobilya.DTO/1.0.0": {
+        "dependencies": {
+          "Mobilya.Entity": "1.0.0"
+        },
+        "runtime": {
+          "Mobilya.DTO.dll": {}
+        }
+      },
+      "Mobilya.Entity/1.0.0": {
+        "runtime": {
+          "Mobilya.Entity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Mobilya.DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mobilya.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
