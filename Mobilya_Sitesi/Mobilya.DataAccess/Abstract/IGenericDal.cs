@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Query;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -10,9 +11,9 @@ namespace Mobilya.DataAccess.Abstract
     public interface IGenericDal<T> where T : class
     {
         T GetById(int id);
-        T Get(Expression<Func<T, bool>> filter);
-        List<T> GetAll();
-        void Insert(T entity);
+        T Get(Expression<Func<T, bool>> filter , Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
+        List<T> GetAll(Expression<Func<T, bool>> filter=null,Func<IQueryable<T>,IIncludableQueryable<T,object>> include=null);
+        T Insert(T entity);
         void Update(T entity);
         void Delete(T entity);
     }

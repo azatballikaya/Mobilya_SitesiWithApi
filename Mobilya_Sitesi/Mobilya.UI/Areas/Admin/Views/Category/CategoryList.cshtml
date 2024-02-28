@@ -1,0 +1,29 @@
+﻿@model List<CategoryViewModel>
+
+<h2>Kategoriler</h2>
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Kategori Id</th>
+            <th>Kategori Ad</th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.CategoryId</td>
+                <td>@category.CategoryName</td>
+             
+                <td>
+                   
+                    <a href="/Admin/Category/CategoryDelete/@category.CategoryId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

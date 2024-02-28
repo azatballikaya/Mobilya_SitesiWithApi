@@ -9,75 +9,127 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Mobilya_Sitesi
 build_property.RootNamespace = Mobilya_Sitesi
-build_property.ProjectDir = C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_Sitesi\Mobilya_Sitesi\Mobilya.UI\
+build_property.ProjectDir = C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_Sitesi\Mobilya_Sitesi\Mobilya.UI
+build_property.MSBuildProjectDirectory = C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Admin/AddAdmin.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/Category/AddCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQWRkQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/Category/CategoryList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/Home/AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxBZGRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/Home/DeleteProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxEZWxldGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/Home/EditProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxFZGl0UHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/Test/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/User/AddUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxBZGRVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Admin/AddAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Category/AddCategory.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Category/AddCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Category/CategoryList.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Category/CategoryList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Home/AddProduct.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Home/AddProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Home/DeleteProduct.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Home/DeleteProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZWxldGVQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Home/EditProduct.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Home/EditProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Home/Index.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Login/Index.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Shared/Error.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Shared/_PartialView.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Shared/_PartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/User/Home.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/User/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/User/Index.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/_ViewImports.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/_ViewStart.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_Sitesi/Mobilya_Sitesi/Mobilya.UI/Views/Shared/_Layout.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Mobilya_SitesiWithApi/Mobilya_Sitesi/Mobilya.UI/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-jkzl4hhrst

@@ -1,0 +1,29 @@
+﻿@model EditUserViewModel
+<h1 class="text-primary">Kullanıcı Düzenleme</h1>
+<form asp-area="Admin" asp-controller="User" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="@Model.UserId"/>
+    
+<label>Kullanıcı adı:</label>
+<input asp-for="UserName" class="form-control"/>
+<label>Şifre: </label>
+<input asp-for="Password" class="form-control" />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+                <label>Rol Seçiniz: </label>
+                @for(int i = 0; i < ViewBag.Roles.Count; i++)
+                {
+                    <input type="hidden" asp-for="@Model.Roles[i].RoleId"/>
+                    <div class="form-check">
+                        <input class="form-check-input" asp-for="@Model.Roles[i].IsChecked" id="checkbox_@i">
+                        <label class="form-check-label" for="checkbox_@i">
+                            @ViewBag.Roles[i].RoleName
+                        </label>
+                    </div>
+                }
+
+        </div>
+    </div>
+</div>
+<button type="submit" class="btn btn-success mt-3">Kaydet</button>
+</form>

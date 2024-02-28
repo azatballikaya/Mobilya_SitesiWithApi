@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Business\\Mobilya.Business.csproj": {}
+    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Business\\Mobilya.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Business\\Mobilya.Business.csproj": {
+    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Business\\Mobilya.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Business\\Mobilya.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Business\\Mobilya.Business.csproj",
         "projectName": "Mobilya.Business",
-        "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Business\\Mobilya.Business.csproj",
+        "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Business\\Mobilya.Business.csproj",
         "packagesPath": "C:\\Users\\Azat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Business\\obj\\",
+        "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Azat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj"
+              "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj"
               },
-              "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj": {
-                "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj"
+              "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj": {
+                "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj": {
+    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj",
         "projectName": "Mobilya.DataAccess",
-        "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj",
+        "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.DataAccess\\Mobilya.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Azat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Azat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -100,8 +100,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj": {
-                "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj"
+              "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj": {
+                "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj"
               }
             }
           }
@@ -157,14 +157,14 @@
         }
       }
     },
-    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj": {
+    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj",
         "projectName": "Mobilya.Entity",
-        "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj",
+        "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Entity\\Mobilya.Entity.csproj",
         "packagesPath": "C:\\Users\\Azat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_Sitesi\\Mobilya_Sitesi\\Mobilya.Entity\\obj\\",
+        "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Azat\\AppData\\Roaming\\NuGet\\NuGet.Config",

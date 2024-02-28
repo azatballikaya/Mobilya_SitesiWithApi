@@ -1,0 +1,27 @@
+﻿@model EditProductViewModel
+
+<h1>Ürün Düzenleme Sayfası</h1>
+<form action="/Admin/Home/EditProduct" method="post">
+    <input type="hidden" asp-for="@Model.ProductId" / >
+    <div class="mb-3">
+        <label for="ProductName" class="form-label">Ürün Adı</label>
+        <input type="text" asp-for="ProductName" class="form-control">
+
+    </div>
+    <div class="mb-3">
+        <label for="Price" class="form-label">Ürün Fiyatı</label>
+        <input type="text" asp-for="Price" class="form-control">
+    </div>
+    <div class="mb-3 ">
+        <label for="Description" class="form-label">Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control">
+    </div>
+    <input type="hidden" name="ImageURl" value="@Model.Image"/>
+    <div class="mb-3 ">
+        <label for="Image" class="form-label">Resim</label>
+        <input type="file" name="Image" class="form-control">
+    </div>
+    <select asp-for="CategoryId" asp-items="@ViewBag.Categories"></select>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

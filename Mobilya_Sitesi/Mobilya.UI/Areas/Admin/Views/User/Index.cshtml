@@ -1,0 +1,38 @@
+﻿@model List<ResultUserViewModel>
+<form asp-area="Admin" asp-controller="User" asp-action="Index" method="post">
+
+<select asp-items="@ViewBag.Roles" id="select_role" name="id">
+   <option value="Tümü">Tümü</option> 
+</select>
+<button type="submit" class="btn btn-primary">Listele</button>
+</form>
+<h1 class="text-primary">Üye Listesi</h1>
+<table class="table table-bordered">
+    <thead>
+
+    <tr>
+        <th>Id</th>
+        <th>UserName</th>
+        <th>Role</th>
+        <th>#</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserId</td>
+                <td>@item.UserName</td>
+                <td>@foreach(var role in item.Roles){
+                    @role.RoleName
+                }
+                </td>
+                <td><a asp-area="Admin" asp-controller="User" asp-action="Edit" asp-route-id="@item.UserId" class="btn btn-primary">Düzenle</a>
+                    <a asp-area="Admin" asp-controller="User" asp-action="Delete" asp-route-id="@item.UserId" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+    
+</table>

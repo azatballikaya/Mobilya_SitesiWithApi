@@ -10,13 +10,18 @@ namespace Mobilya.DataAccess.Concrete.EntityFramework
 {
     public class Context:DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public Context(DbContextOptions<Context> options) : base(options)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-NOPPPVL\\SQLEXPRESS; database=MobilyaApiDb; integrated security=true; TrustServerCertificate = True;");
-
+                
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<UserRole>().HasKey(x => new { x.UserId, x.RoleId });
         }
 
-        public DbSet<Admin> Admins { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Category { get; set; }
     }
