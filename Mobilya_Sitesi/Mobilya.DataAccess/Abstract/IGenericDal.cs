@@ -13,6 +13,7 @@ namespace Mobilya.DataAccess.Abstract
         T GetById(int id);
         T Get(Expression<Func<T, bool>> filter , Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);
         List<T> GetAll(Expression<Func<T, bool>> filter=null,Func<IQueryable<T>,IIncludableQueryable<T,object>> include=null);
+        
         T Insert(T entity);
         void Update(T entity);
         void Delete(T entity);

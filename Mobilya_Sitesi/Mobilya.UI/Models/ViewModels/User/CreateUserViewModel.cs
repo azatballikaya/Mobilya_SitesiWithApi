@@ -1,10 +1,14 @@
-﻿namespace Mobilya_Sitesi.Models.ViewModels.User
+﻿using Mobilya_Sitesi.Models.ViewModels.Role;
+using System.ComponentModel.DataAnnotations;
+
+namespace Mobilya_Sitesi.Models.ViewModels.User
 {
     public class CreateUserViewModel
     {
         public string? UserName { get; set; }
+        [DataType(DataType.Password)]
         public string? Password { get; set; }
-        public string? Role { get; set; }
-        List<string> roles { get; set; }
+        public List<int> RoleIds { get; set; }
+        public List<ResultRoleViewModel> Roles { get; set; }
     }
 }

@@ -15,11 +15,13 @@ namespace Mobilya.Business.Concrete
     public class RoleManager : IRoleService
     {
         private readonly IRoleDal _roleDal;
+        private readonly IUserRoleDal _userRoleDal;
         private readonly IMapper _mapper;
-        public RoleManager(IRoleDal roleDal, IMapper mapper)
+        public RoleManager(IRoleDal roleDal, IMapper mapper, IUserRoleDal userRoleDal)
         {
             _roleDal = roleDal;
             _mapper = mapper;
+            _userRoleDal = userRoleDal;
         }
 
         public void AddRole(CreateRoleDTO createRoleDTO)
@@ -32,6 +34,11 @@ namespace Mobilya.Business.Concrete
         {
             var role=_roleDal.GetById(id);
             _roleDal.Delete(role);
+            var userRoles=_userRoleDal.GetAll(x=>x.RoleId==id);
+            foreach (var item in userRoles)
+            {
+                _userRoleDal.Delete(item);
+            }
         }
 
         public List<ResultRoleDTO> GetAllRoles()

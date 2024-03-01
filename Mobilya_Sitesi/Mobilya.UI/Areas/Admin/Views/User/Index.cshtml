@@ -24,7 +24,7 @@
                 <td>@item.UserId</td>
                 <td>@item.UserName</td>
                 <td>@foreach(var role in item.Roles){
-                    @role.RoleName
+                    @role.RoleName <span> </span>
                 }
                 </td>
                 <td><a asp-area="Admin" asp-controller="User" asp-action="Edit" asp-route-id="@item.UserId" class="btn btn-primary">Düzenle</a>
@@ -36,3 +36,17 @@
     </tbody>
     
 </table>
+<script>
+    // $(document).ready(function () {
+    //     $("#select_role").change(function () {
+    //         var selected = $(this).val();
+    //         $.ajax({
+    //             url: '@Url.Action("Index","User")',
+    //             type: 'post',
+    //             data: { id:selected },
+    //             dataType: 'json',
+    //             success: function (response)
+    //         })
+    //     })
+    // })
+</script>

@@ -34,7 +34,7 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
 
         }
 
-        Context c = new Context();
+       
         [HttpGet]
         public async Task<IActionResult> Index(int category=0)
         {

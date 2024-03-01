@@ -1,0 +1,21 @@
+﻿@model DeleteRoleViewModel
+<h1 class="text-danger">Rol Silme Sayfası</h1>
+<div class="card">
+    <div class="card-header">
+        @Model.RoleName
+    </div>
+    <div class="card-body">
+
+
+        <blockquote class="blockquote mb-0">
+            <h3><span class="text-danger">@Model.RoleId</span> Id numaralı <span class="text-danger"> @Model.RoleName </span> rolü silinecektir!</h3>
+        </blockquote>
+        <div class="row mt-4">
+            
+
+            <a class="btn btn-info mr-2" href="/Admin/User/Index">Geri Al</a>
+            <a href="/Admin/Role/DeleteRole/@Model.RoleId" class="btn btn-danger">Sil</a>
+        </div>
+
+    </div>
+</div>

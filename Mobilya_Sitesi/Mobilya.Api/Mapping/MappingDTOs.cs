@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
-
+using Mobilya.Business.DTOs.CartDTOs;
+using Mobilya.Business.DTOs.CartItemDTOs;
 using Mobilya.Business.DTOs.CategoryDTOs;
+using Mobilya.Business.DTOs.OrderDetailDTOs;
+using Mobilya.Business.DTOs.OrderDTOs;
 using Mobilya.Business.DTOs.ProductDTOs;
 using Mobilya.Business.DTOs.RoleDTOs;
 using Mobilya.Business.DTOs.UserDTOs;
@@ -43,8 +46,23 @@ namespace Mobilya.Business.Mapping
             CreateMap<User,ResultUserWithRoleNameDTO>().ForMember(dest=>dest.RoleNames, opt=>opt.MapFrom(src=>src.UserRoles.Select(x=>x.Role.RoleName))).ReverseMap();
             CreateMap<User,ResultUserDTO>().ForMember(dest=>dest.Roles, opt=>opt.MapFrom(src=>src.UserRoles.Select(x=>x.Role))).ReverseMap();
 
+            CreateMap<Cart,ResultCartDTO>().ReverseMap();
+            CreateMap<Cart,UpdateCartDTO>().ReverseMap();
+            CreateMap<Cart,CreateCartDTO>().ReverseMap();
 
-            
+            CreateMap<CartItem, ResultCartItemDTO>().ReverseMap();
+            CreateMap<CartItem, UpdateCartItemDTO>().ReverseMap();
+            CreateMap<CartItem, CreateCartItemDTO>().ReverseMap();
+
+            CreateMap<Order, ResultOrderDTO>().ReverseMap();
+            CreateMap<Order, UpdateOrderDTO>().ReverseMap();
+            CreateMap<Order, CreateOrderDTO>().ReverseMap();
+
+            CreateMap<OrderDetail, ResultOrderDetailDTO>().ReverseMap();
+            CreateMap<OrderDetail, UpdateOrderDetailDTO>().ReverseMap();
+            CreateMap<OrderDetail, CreateOrderDetailDTO>().ReverseMap();
+
+
 
         }
     }

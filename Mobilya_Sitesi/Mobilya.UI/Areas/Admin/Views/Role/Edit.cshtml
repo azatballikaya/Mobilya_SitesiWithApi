@@ -1,0 +1,10 @@
+﻿@model EditRoleViewModel
+<h1 class="text-primary">Rol Düzenleme</h1>
+<form asp-area="Admin" asp-controller="Role" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="@Model.RoleId" />
+
+    <label>Kullanıcı adı:</label>
+    <input asp-for="RoleName" class="form-control" />
+
+    <button type="submit" class="btn btn-success mt-3">Kaydet</button>
+</form>

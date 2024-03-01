@@ -18,12 +18,14 @@ namespace Mobilya.Business.Concrete
     {
         private readonly IUserDal _userDal;
         private readonly IUserRoleDal _userRoleDal;
+        private readonly ICartDal _cartDal;
         private readonly IMapper _mapper;
-        public UserManager(IUserDal userDal, IMapper mapper, IUserRoleDal userRoleDal)
+        public UserManager(IUserDal userDal, IMapper mapper, IUserRoleDal userRoleDal, ICartDal cartDal)
         {
             _userDal = userDal;
             _mapper = mapper;
             _userRoleDal = userRoleDal;
+            _cartDal = cartDal;
         }
 
         public void AddUserToRole(int userId, int roleId)
@@ -60,11 +62,16 @@ namespace Mobilya.Business.Concrete
                 UserId = newUser.UserId,
                 RoleId = r
             }).ToList();
+            _cartDal.Insert(new Cart
+            {
+                UserId = newUser.UserId,
+            });
             _userDal.Update(newUser);
         }
 
         public void DeleteUser(int id)
         {
+            RemoveUserFromAllRoles(id);
             _userDal.Delete(_userDal.GetById(id));
         }
 
@@ -80,6 +87,7 @@ namespace Mobilya.Business.Concrete
             User user=_userDal.Get(x=>x.UserName==loginUserDTO.UserName && loginUserDTO.Password==loginUserDTO.Password, x=>x.Include(y=>y.UserRoles).ThenInclude(z=>z.Role));
             if(user!=null)
             {
+                loginUserDTO.UserId = user.UserId;
                 loginUserDTO.UserName = user.UserName;
                 loginUserDTO.Password = user.Password;
                 loginUserDTO.RoleNames = user.UserRoles.Select(x => x.Role.RoleName).ToList();
@@ -94,16 +102,8 @@ namespace Mobilya.Business.Concrete
             return value;
         }
 
-        public List<ResultUserDTO> GetUserListWithRoles()
-        {
-            var users = _userDal.GetAll(include: x => x.Include(y => y.UserRoles).ThenInclude(z => z.Role));
-            
-            var values = _mapper.Map<List<ResultUserDTO>>(users);
-               
-            
-            return values;
-
-        }
+     
+        
 
         public ResultUserDTO GetUserWtihRoles(int id)
         {
@@ -142,6 +142,21 @@ namespace Mobilya.Business.Concrete
         public void RemoveUserFromAllRoles(int userId)
         {
             _userRoleDal.RemoveAllRolesByUserId(userId);
+        }
+
+        public List<ResultUserDTO> GetUserListWithRoles()
+        {
+            var list= _userDal.GetAll(include: x => x.Include(y => y.UserRoles).ThenInclude(z => z.Role));
+            var values=_mapper.Map<List<ResultUserDTO>>(list);
+            return values;
+            
+        }
+        public List<ResultUserDTO> GetUserListWithRoles(string roleName)
+        {
+            var list= _userDal.GetAll(filter:x=>x.UserRoles.Any(y=>y.Role.RoleName==roleName),include: x => x.Include(y => y.UserRoles).ThenInclude(z => z.Role));
+            var values=_mapper.Map<List<ResultUserDTO>>(list);
+            return values;
+            
         }
     }
 }

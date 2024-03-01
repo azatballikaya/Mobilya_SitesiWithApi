@@ -1,0 +1,15 @@
+﻿@model CreateRoleViewModel
+
+<h1 class="text-success">Yeni Rol Ekleme Sayfası</h1>
+<form action="/Admin/Role/AddRole" method="post">
+    <div><span asp-validation-summary="All"></span></div>
+    <div class="mb-3">
+        <label for="ProductName" class="form-label">Rol Adı Giriniz: </label>
+        <input type="text" asp-for="RoleName" class="form-control">
+
+    </div>
+
+  
+    <button type="submit" class="btn btn-primary mt-2">Kaydet</button>
+</form>
+

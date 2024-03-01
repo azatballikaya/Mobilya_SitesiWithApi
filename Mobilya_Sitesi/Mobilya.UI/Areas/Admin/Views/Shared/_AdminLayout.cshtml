@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="~/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/AdminLTE-3.2.0/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
 </head>
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
@@ -23,11 +25,9 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
+                    <a asp-area="" asp-controller="User" asp-action="Home" target="_blank" class="nav-link text-success">Ana Sayfaya Dön</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
+              
             </ul>
 
             <!-- Right navbar links -->
@@ -257,7 +257,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a asp-area="Admin" asp-controller="User" asp-action="Index"  class="nav-link">
+                                    <a asp-area="Admin" asp-controller="User" asp-action="AddUser"  class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Üye Ekle</p>
                                     </a>
@@ -265,7 +265,32 @@
                            
                             </ul>
                         </li>
-                        
+                                  <li class="nav-item">
+                            <a  class="nav-link">
+                                
+                                <i class="fa-solid fa-address-card"></i>
+
+                                <p>
+                                    Rol Yönetimi
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a asp-area="Admin" asp-controller="Role" asp-action="Index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Rol Listesi</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-area="Admin" asp-controller="Role" asp-action="AddRole"  class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Rol Ekle</p>
+                                    </a>
+                                </li>
+                           
+                            </ul>
+                        </li>
                         <li class="nav-header">EXAMPLES</li>
                        
                         <li class="nav-item">
@@ -392,6 +417,14 @@
                                 </li>
                             </ul>
                         </li>
+                         <li class="nav-item">
+                            <a asp-area="" asp-controller="Login" asp-action="Logout" class="nav-link">
+                               <i class="fa-solid fa-right-from-bracket"></i>
+                                <p>
+                                    Çıkış Yap
+                                    
+                                </p>
+                            </a>
                   
                     </ul>
                 </nav>

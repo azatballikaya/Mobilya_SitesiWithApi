@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\Models\ViewModels\.editorconfig" />
     <None Include="wwwroot\AdminLTE-3.2.0\.github\codeql\codeql-config.yml" />
     <None Include="wwwroot\AdminLTE-3.2.0\.github\CONTRIBUTING.md" />
     <None Include="wwwroot\AdminLTE-3.2.0\.github\dependabot.yml" />
@@ -36,6 +37,10 @@
     <None Include="wwwroot\AdminLTE-3.2.0\.github\workflows\codeql.yml" />
     <None Include="wwwroot\AdminLTE-3.2.0\.github\workflows\docs.yml" />
     <None Include="wwwroot\AdminLTE-3.2.0\.github\workflows\lint.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\Models\ViewModels\.editorconfig" />
   </ItemGroup>
 
 </Project>

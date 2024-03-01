@@ -43,6 +43,19 @@ builder.Services.AddScoped<IRoleService, RoleManager>();
 builder.Services.AddScoped<IUserRoleDal,EfUserRoleDal>();
 builder.Services.AddScoped<IUserRoleService, UserRoleManager>();
 
+builder.Services.AddScoped<ICartDal, EfCartDal>();
+builder.Services.AddScoped<ICartService, CartManager>();
+
+builder.Services.AddScoped<ICartItemDal, EfCartItemDal>();
+builder.Services.AddScoped<ICartItemService,CartItemManager>();
+
+builder.Services.AddScoped<IOrderDal,EfOrderDal>();
+builder.Services.AddScoped<IOrderService, OrderManager>();
+
+builder.Services.AddScoped<IOrderDetailDal,EfOrderDetailDal>();
+
+
+
 
 var app = builder.Build();
 

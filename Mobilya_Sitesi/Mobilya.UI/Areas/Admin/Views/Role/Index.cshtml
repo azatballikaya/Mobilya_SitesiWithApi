@@ -1,0 +1,29 @@
+﻿@model List<ResultRoleViewModel>
+<h1 class="text-primary">Rol Listesi</h1>
+
+
+<table class="table table-bordered">
+    <thead>
+
+        <tr>
+            <th>Id</th>
+            <th>Rol Adı</th>
+            <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RoleId</td>
+                <td>@item.RoleName</td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Role" asp-action="Edit" asp-route-id="@item.RoleId" class="btn btn-primary">Düzenle</a>
+                    <a asp-area="Admin" asp-controller="Role" asp-action="Delete" asp-route-id="@item.RoleId" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

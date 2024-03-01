@@ -42,13 +42,14 @@ namespace Mobilya.Api.Controllers
             var user = _userService.GetUserWtihRoles(id);
             return Ok(user);
         }
-        //[HttpGet("GetUsersByRole/{id}")]
-        //public IActionResult GetUsersByRole(string id)
-        //{
 
-        //    var admin = _adminService.GetUsersByRole(id);
-        //    return Ok(admin);
-        //}
+        [HttpGet("GetUsersWithRolesByName/{id}")]
+        public IActionResult GetUsersByRole(string id)
+        {
+
+            var users = _userService.GetUserListWithRoles(id);
+            return Ok(users);
+        }
         [HttpGet]
         public IActionResult GetUserList()
         {
@@ -74,7 +75,7 @@ namespace Mobilya.Api.Controllers
             _userService.UpdateUser(updateUserDTO);
             return Ok() ;
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id)
         {
             _userService.DeleteUser(id);

@@ -28,19 +28,21 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
            
 
              responseMessage=  await client.GetAsync("http://localhost:5198/api/User/GetAllUsersWithRoles");
+            List<string> list = new List<string>();
+            list.Add("Superadmin");
+            list.Add("Admin");
+            list.Add("Customer");
             
-         
+
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData=await responseMessage.Content.ReadAsStringAsync();
                 var value=JsonConvert.DeserializeObject<List<ResultUserViewModel>>(jsonData);
-                
-                List<string> roles = new List<string>();
-                roles.Add("Superadmin");
-                roles.Add("Admin");
-                roles.Add("Customer");
 
-                ViewBag.Roles = new SelectList(roles);
+               var value2=value.Select(x=>x.Roles).ToList();
+                var newlist=value2.SelectMany(value=>value);
+                newlist=newlist.Distinct().ToList();
+                ViewBag.Roles = new SelectList(newlist,"RoleId","RoleName");
 
 
                 return View(value);
@@ -75,15 +77,28 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult AddUser()
+        public async Task<IActionResult> AddUser()
         {
+            var client=_httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5198/api/Role");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData=await responseMessage.Content.ReadAsStringAsync();
+                var roles=JsonConvert.DeserializeObject<List<ResultRoleViewModel>>(jsonData);
+                CreateUserViewModel createUserViewModel = new CreateUserViewModel()
+                {
+                    Roles = roles
+                };
+                return View(createUserViewModel);
+            }
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> AddUser(CreateUserViewModel model)
         {
-            if(ModelState.IsValid)
-            {
+            
+            
+                model.RoleIds=model.Roles.Where(x=>x.IsChecked).Select(x=>x.RoleId).ToList();
                 var client=_httpClientFactory.CreateClient();
                 var jsonData=JsonConvert.SerializeObject(model);
                 StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
@@ -94,7 +109,7 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
                 }
                 
                 
-            }
+            
             return View(model);
         }
         [HttpGet]
@@ -151,6 +166,30 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
             }
             return View(editUserViewModel);
         }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            
+            var responseMessage = await client.GetAsync($"http://localhost:5198/api/User/{id}" );
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values=JsonConvert.DeserializeObject<ResultUserViewModel>(jsonData);
+                return View(values);
+            }
+            return RedirectToAction("Index");
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.DeleteAsync($"http://localhost:5198/api/User/{id}");
+            return RedirectToAction("Index");
+        }
+       
+      
 
     }
 }

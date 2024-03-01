@@ -67,6 +67,6 @@ namespace Mobilya.DataAccess.Concrete.EntityFramework
             _context.SaveChanges();
         }
 
-       
+    
     }
 }

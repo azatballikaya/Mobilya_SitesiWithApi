@@ -26,11 +26,16 @@ namespace Mobilya_Sitesi.Controllers
         
         public IActionResult Index()
         {
-            return View();
+			if (User.Identity.IsAuthenticated)
+			{
+				return Redirect("/Admin/Home/Index");
+			}
+			return View();
         }
         [HttpPost]
         public async Task<IActionResult> Index(LoginUserViewModel loginUserViewModel)
         {
+          
             var apiurl = _configuration.GetSection("ApiUrl").Get<string>();
             var client=_httpClientFactory.CreateClient();
             var jsonData=JsonConvert.SerializeObject(loginUserViewModel);
@@ -46,6 +51,7 @@ namespace Mobilya_Sitesi.Controllers
                     
                     var claims = new List<Claim>()
                 {
+                    new Claim(ClaimTypes.NameIdentifier,loginUserViewModel.UserId.ToString())
                     new Claim(ClaimTypes.Name,admin.UserName),
                     
 
@@ -68,5 +74,10 @@ namespace Mobilya_Sitesi.Controllers
             return View(loginUserViewModel);
           
         }
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+			return RedirectToAction("User", "Home");
+		}
     }
 }
