@@ -27,7 +27,14 @@ namespace Mobilya.Business.Concrete
 
         public void AddCartItemToCart(int cartId, int productId)
         {
-            _cartItemDal.Insert(new CartItem { ProductId = productId,CartId = cartId });
+           var cartItem=_cartItemDal.Get(x=>x.ProductId == productId && x.CartId==cartId);
+            if(cartItem == null)
+            {
+            _cartItemDal.Insert(new CartItem { ProductId = productId,CartId = cartId , Quantity=1});
+
+            }
+            cartItem.Quantity =cartItem.Quantity+ 1;
+            _cartItemDal.Update(cartItem);
         }
 
         public void ChangeQuantity(int cartItemId, int quantity)

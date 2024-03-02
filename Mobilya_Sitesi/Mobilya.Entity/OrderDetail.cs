@@ -9,6 +9,8 @@ namespace Mobilya.Entity
     public class OrderDetail
     {
         public int OrderDetailId { get; set; }
+        public int OrderId { get; set; }
+        public Order Order { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public int Quantity { get; set; }
         public int ProductId { get; set; }

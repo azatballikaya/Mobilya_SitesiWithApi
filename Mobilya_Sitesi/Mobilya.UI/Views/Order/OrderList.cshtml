@@ -1,0 +1,25 @@
+﻿@model List<ResultOrderViewModel>
+<h1 class="text-primary">Siparişlerim</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>İsim</th>
+            <th>Kart No</th>
+            <th>Toplam Ürün Adeti</th>
+            <th>Ödenen Tutar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.FullName</td>
+                <td>@item.CardNumber</td>
+                <td>@item.OrderDetails.Count</td>
+                <td>@item.OrderDetails.Sum(x=>x.Quantity*x.Product.Price).ToString("N")</td>
+            </tr>
+        }
+    </tbody>
+</table>

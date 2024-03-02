@@ -28,7 +28,7 @@ namespace Mobilya.Business.Concrete
 
         public ResultCartDTO GetCartByUserId(int userId)
         {
-            var cart=_cartDal.Get(x=>x.UserId == userId,include:x=>x.Include(y=>y.User).Include(z=>z.CartItems));
+            var cart=_cartDal.Get(x=>x.UserId == userId,include:x=>x.Include(y=>y.User).Include(z=>z.CartItems).ThenInclude(p=>p.Product).ThenInclude(c=>c.Category));
             var dto=_mapper.Map<ResultCartDTO>(cart);
             return dto;
         }

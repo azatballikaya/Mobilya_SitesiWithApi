@@ -15,7 +15,7 @@ namespace Mobilya.Business.Abstract
         void DeleteOrder(int id);
         void AddOrderDetailToOrder(int quantity, int productId);
        
-        ResultOrderDTO GetOrderByUserId(int id);
+       List<ResultOrderDTO> GetOrderByUserId(int id);
         List<ResultOrderDTO> GetAllOrders();
         
     }

@@ -1,4 +1,6 @@
-﻿namespace Mobilya_Sitesi.Models.ViewModels.Product
+﻿using Mobilya_Sitesi.Models.ViewModels.Category;
+
+namespace Mobilya_Sitesi.Models.ViewModels.Product
 {
     public class ProductViewModel
     {
@@ -9,5 +11,6 @@
         public string? Image { get; set; }
         public int CategoryId { get; set; }
         public string  CategoryName { get; set;}
+        public CategoryViewModel Category { get; set; }
     }
 }

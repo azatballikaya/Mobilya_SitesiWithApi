@@ -10129,6 +10129,10 @@
       "PackagePath": "staticwebassets\\Login_v6\\vendor\\select2\\select2.min.js"
     },
     {
+      "Id": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.UI\\wwwroot\\css\\cart-css.css",
+      "PackagePath": "staticwebassets\\css\\cart-css.css"
+    },
+    {
       "Id": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.UI\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

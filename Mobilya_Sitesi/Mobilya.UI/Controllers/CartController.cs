@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mobilya_Sitesi.Models.ViewModels.Cart;
+using Newtonsoft.Json;
+using System.Security.Claims;
+using System.Text;
 
 namespace Mobilya_Sitesi.Controllers
 {
@@ -11,17 +14,58 @@ namespace Mobilya_Sitesi.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
+        [NonAction]
+        public async Task<ResultCartViewModel> GetCartByUserId()
+        {
+            var userId=Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var client=_httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:5198/api/Cart/GetCartByUserId/{userId}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData=await responseMessage.Content.ReadAsStringAsync();
+                var value=JsonConvert.DeserializeObject<ResultCartViewModel>(jsonData);
+                return value;
+            }
+            return null;
+        } 
         
-        public async IActionResult AddToCart(int id)
+        public async Task<IActionResult> AddToCart(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            AddToCartViewModel addToCartViewModel= new AddToCartViewModel()
+            var cart= await GetCartByUserId();
+            var cartId = cart.CartId;
+            
+            AddToCartViewModel addToCartViewModel = new AddToCartViewModel()
             {
                 ProductId = id,
-                UserId=User.Identity.getuser
+                CartId=cartId,
+            };
+            
+            var jsonData = JsonConvert.SerializeObject(addToCartViewModel);
+            StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
+            var responseMessage = await client.PostAsync("http://localhost:5198/api/Cart/AddToCart", content);
+           
+            return RedirectToAction("Index","User");
+        }
+        public async Task<IActionResult> GoToCart(bool? id=null)
+        {
+            ResultCartViewModel resultCartViewModel;
+            if (id == null)
+            {
+             resultCartViewModel  = await GetCartByUserId();
+                return View(resultCartViewModel);
             }
-            var responseMessage=await client.GetAsync($"http://localhost:5198/api/")
-            return View();
+            if (id == true)
+            {
+                ViewBag.Check = "Siparişiniz Başarı ile Alınmıştır...";
+            }
+            else
+            {
+                ViewBag.Check = "Siparişiniz alınamadı!!!";
+            }
+            resultCartViewModel =await GetCartByUserId();
+            return View(resultCartViewModel);
+
         }
     }
 }

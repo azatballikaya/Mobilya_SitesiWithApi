@@ -17,6 +17,9 @@ namespace Mobilya.DataAccess.Concrete.EntityFramework
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserRole>().HasKey(x => new { x.UserId, x.RoleId });
+            //modelBuilder.Entity<Order>().
+            //    HasMany<OrderDetail>(od => od.OrderDetails).
+            //    WithOne(o => o.Order).HasForeignKey(f => f.OrderId);
         }
 
         public DbSet<User> Users { get; set; }
@@ -26,7 +29,9 @@ namespace Mobilya.DataAccess.Concrete.EntityFramework
         public DbSet<Category> Category { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
-        public DbSet<Order> Orders { get; set; }
+        public DbSet<Order> Orders{ get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+
+
     }
 }

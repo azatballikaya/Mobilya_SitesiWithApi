@@ -32,13 +32,13 @@ namespace Mobilya.Api.Controllers
             _cartItemService.DeleteCartItem(id);
             return Ok();
         }
-        [HttpGet("GetCartByUserId")]
+        [HttpGet("GetCartByUserId/{id}")]
         public IActionResult GetCart(int id)
         {
             var cart=_cartService.GetCartByUserId(id);
             return Ok(cart);
         }
-        [HttpGet]
+        [HttpGet("ClearCartByUserId/{id}")]
         public IActionResult ClearCart(int id)
         {
             _cartItemService.ClearCart(id);

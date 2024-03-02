@@ -3,6 +3,6 @@
     public class AddToCartViewModel
     {
         public int ProductId { get; set; }
-        public int UserId { get; set; }
+        public int CartId { get; set; }
     }
 }

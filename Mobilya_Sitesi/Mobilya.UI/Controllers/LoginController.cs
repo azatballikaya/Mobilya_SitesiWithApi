@@ -51,7 +51,7 @@ namespace Mobilya_Sitesi.Controllers
                     
                     var claims = new List<Claim>()
                 {
-                    new Claim(ClaimTypes.NameIdentifier,loginUserViewModel.UserId.ToString())
+                    new Claim(ClaimTypes.NameIdentifier,admin.UserId.ToString()),
                     new Claim(ClaimTypes.Name,admin.UserName),
                     
 

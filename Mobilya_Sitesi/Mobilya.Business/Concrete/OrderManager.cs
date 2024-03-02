@@ -17,13 +17,17 @@ namespace Mobilya.Business.Concrete
     {
         private readonly IOrderDal _orderDal;
         private readonly IOrderDetailDal _orderDetailDal;
+        private readonly ICartService _cartService;
+        private readonly ICartItemService _cartItemService;
         private readonly IMapper _mapper;
 
-        public OrderManager(IOrderDal orderDal, IOrderDetailDal orderDetailDal, IMapper mapper)
+        public OrderManager(IOrderDal orderDal, IOrderDetailDal orderDetailDal, IMapper mapper, ICartService cartService, ICartItemService cartItemService)
         {
             _orderDal = orderDal;
             _orderDetailDal = orderDetailDal;
             _mapper = mapper;
+            _cartService = cartService;
+            _cartItemService = cartItemService;
         }
 
         public void AddOrderDetailToOrder(int quantity,int productId)
@@ -39,27 +43,54 @@ namespace Mobilya.Business.Concrete
 
         public void CreateOrder(CreateOrderDTO createOrderDTO)
         {
-            var order=_mapper.Map<Order>(createOrderDTO);
-            _orderDal.Insert(order);
+            var order = _orderDal.Insert(new Order
+            {
+                Cvv = createOrderDTO.Cvv,
+                CardNumber = createOrderDTO.CardNumber,
+                ExpirationMonth = createOrderDTO.ExpirationMonth,
+                ExpirationYear = createOrderDTO.ExpirationYear,
+                FullName = createOrderDTO.FullName,
+                UserId = createOrderDTO.UserId,
+            });
+             var cart=   _cartService.GetCartByUserId(createOrderDTO.UserId);
+            foreach (var cartItem in cart.CartItems)
+            {
+                _orderDetailDal.Insert(new OrderDetail
+                {
+                    Quantity = cartItem.Quantity,
+                    ProductId = cartItem.ProductId,
+                    CreatedDate = DateTime.Now,
+                    OrderId=order.Id,
+                    Price = Convert.ToDecimal(cartItem.Quantity * cartItem.Product.Price),
+
+                });
+            }
+            _cartItemService.ClearCart(createOrderDTO.UserId);
+
         }
 
         public void DeleteOrder(int id)
         {
             var order=_orderDal.GetById(id);
+            var orderDetails = order.OrderDetails;
+            foreach (var item in orderDetails)
+            {
+                _orderDetailDal.Delete(item);
+            }
             _orderDal.Delete(order);
         }
 
         public List<ResultOrderDTO> GetAllOrders()
         {
-            var orderList = _orderDal.GetAll(include: x => x.Include(y => y.OrderDetails).Include(z => z.User));
+            var orderList = _orderDal.GetAll(include:x=>x.Include(u=>u.User).Include(y=>y.OrderDetails).ThenInclude(k=>k.Product));
             var dtos=_mapper.Map<List<ResultOrderDTO>>(orderList);
             return dtos;
         }
 
-        public ResultOrderDTO GetOrderByUserId(int id)
+        public List<ResultOrderDTO> GetOrderByUserId(int userId)
         {
-            var orderList = _orderDal.GetAll(include: x => x.Include(y => y.OrderDetails).Include(z => z.User));
-            var dto = _mapper.Map<ResultOrderDTO>(orderList);
+            var orderList = _orderDal.GetAll(filter:x=>x.UserId==userId,include: x => x.Include(z => z.User).Include(y => y.OrderDetails).ThenInclude(k => k.Product));
+            var dto = _mapper.Map<List<ResultOrderDTO>>(orderList);
             return dto;
         }
 

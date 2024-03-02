@@ -1521,3 +1521,9 @@ C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Si
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\obj\Debug\net7.0\Mobilya_Sitesi.pdb
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\obj\Debug\net7.0\Mobilya_Sitesi.genruntimeconfig.cache
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\obj\Debug\net7.0\ref\Mobilya_Sitesi.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.UI\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

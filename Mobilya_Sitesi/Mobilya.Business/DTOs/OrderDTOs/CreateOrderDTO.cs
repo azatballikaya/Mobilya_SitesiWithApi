@@ -1,4 +1,6 @@
-﻿using Mobilya.Entity;
+﻿using Mobilya.Business.DTOs.OrderDetailDTOs;
+using Mobilya.Business.DTOs.UserDTOs;
+using Mobilya.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +13,17 @@ namespace Mobilya.Business.DTOs.OrderDTOs
     public class CreateOrderDTO
     {
 
-       
-        public string OrderNumber { get; set; }
-        public DateTime OrderDate { get; set; }
-        public string UserId { get; set; }
-        public User User { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public string Note { get; set; }
-        public string PaymentId { get; set; }
-        public string ConversationId { get; set; }
-        public EnumPaymentType PaymentType { get; set; }
+
+        public string FullName { get; set; }
+        public string CardNumber { get; set; }
+        public string ExpirationMonth { get; set; }
+        public string ExpirationYear { get; set; }
+        public string Cvv { get; set; }
+        public string Adress { get; set; }
+        public int UserId { get; set; }
         
+       
+
+
     }
 }
