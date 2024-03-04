@@ -22,6 +22,12 @@ namespace Mobilya.Api.Controllers
             var orders = _orderService.GetAllOrders();
             return Ok(orders);
         }
+        [HttpGet("GetOrderById/{id}")]
+        public async Task<IActionResult> GetOrderById(int id)
+        {
+            var order=_orderService.GetOrderById(id);
+            return Ok(order);
+        }
         [HttpGet("GetOrderByUserId/{id}")]
         public IActionResult GetOrderByUserId(int id)
         {

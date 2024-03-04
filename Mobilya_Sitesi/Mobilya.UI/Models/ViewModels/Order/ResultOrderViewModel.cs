@@ -13,6 +13,7 @@ namespace Mobilya_Sitesi.Models.ViewModels.Order
         public string Cvv { get; set; }
         public string Adress { get; set; }
         public int UserId { get; set; }
+
         public ResultUserViewModel User { get; set; }
         public List<ResultOrderDetailViewModel> OrderDetails { get; set; }
     }

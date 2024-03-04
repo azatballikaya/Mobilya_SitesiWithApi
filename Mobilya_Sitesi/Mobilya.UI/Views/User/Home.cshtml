@@ -79,20 +79,33 @@ https://templatemo.com/tm-591-villa-agency
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                      <li><a href="/user/home" >Ana Sayfa</a></li>
-                      <li><a href="/user/Index">Ürünler</a></li>
-                      <li><a href="/Order/OrderList">Siparişlerim</a></li>
-                      <li><a href="/Order/OrderList">Kayıt Ol</a></li>
+                        <ul class="nav">
+                            <li><a href="/user/home">Ana Sayfa</a></li>
+                            <li><a href="/user/Index">Ürünler</a></li>
 
-                            @if(!User.IsInRole("Customer"))
+
+
+
+                            @if (!User.Identity.IsAuthenticated)
                             {
-                                
-                            <li><a href="/Login/Index">Admin Girişi Yap</a></li>
+                                <li><a href="/Order/OrderList">Kayıt Ol</a></li>
+                                <li><a href="/Login/Index">Giriş Yap</a></li>
+
                             }
-                      <li><a asp-area="" asp-controller="Cart" asp-action="GoToCart"><i class="fa fa-calendar"></i> Sepete Git</a></li>
-                      
-                  </ul>   
+                            else
+                            {
+                                <li><a href="/Order/OrderList">Siparişlerim</a></li>
+                                if (!User.IsInRole("Customer"))
+                                {
+                                    <li><a href="/Admin/Home/Index">Admin Paneli</a></li>
+                                }
+                                <li><a asp-area="" asp-controller="Cart" asp-action="GoToCart"><i class="fa fa-calendar"></i> Sepete Git</a></li>
+
+
+                            }
+
+
+                        </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>

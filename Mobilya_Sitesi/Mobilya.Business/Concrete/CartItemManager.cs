@@ -46,8 +46,11 @@ namespace Mobilya.Business.Concrete
 
         public void ClearCart(int userId)
         {
-          var cart=  _cartDal.Get(x=>x.UserId == userId);
-            _cartDal.Update(cart);
+          var cartItems=_cartItemDal.GetAll(x=>x.Cart.User.UserId == userId,x=>x.Include(y=>y.Cart).ThenInclude(z=>z.User));
+            foreach (var item in cartItems)
+            {
+                _cartItemDal.Delete(item);
+            }
         }
 
         public void DeleteCartItem(int cartItemId)

@@ -68,15 +68,12 @@ namespace Mobilya.Business.Concrete
             _cartItemService.ClearCart(createOrderDTO.UserId);
 
         }
-
+       
         public void DeleteOrder(int id)
         {
-            var order=_orderDal.GetById(id);
-            var orderDetails = order.OrderDetails;
-            foreach (var item in orderDetails)
-            {
-                _orderDetailDal.Delete(item);
-            }
+            var order=_orderDal.Get(x=>x.Id==id, x=>x.Include(y=>y.OrderDetails));
+           
+           
             _orderDal.Delete(order);
         }
 
@@ -91,6 +88,12 @@ namespace Mobilya.Business.Concrete
         {
             var orderList = _orderDal.GetAll(filter:x=>x.UserId==userId,include: x => x.Include(z => z.User).Include(y => y.OrderDetails).ThenInclude(k => k.Product));
             var dto = _mapper.Map<List<ResultOrderDTO>>(orderList);
+            return dto;
+        }
+        public ResultOrderDTO GetOrderById(int id)
+        {
+            var order=_orderDal.Get(x=>x.Id==id,x=>x.Include(z=>z.OrderDetails));
+            var dto=_mapper.Map<ResultOrderDTO>(order);
             return dto;
         }
 

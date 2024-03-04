@@ -9,6 +9,7 @@ namespace Mobilya_Sitesi.Models.ViewModels.Cart
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public int UserId { get; set; }
         public ResultUserViewModel User { get; set; }
+        public bool?  IsSucessed { get; set; }
         public List<ResultCartItemViewModel> CartItems { get; set; }
 
         public decimal TotalPrice()

@@ -1,0 +1,61 @@
+﻿@model List<ResultOrderViewModel>
+@if (ViewBag.Check != null)
+{
+    
+<div class="alert alert-success" role="alert">
+    <h1>@ViewBag.Check</h1>
+</div>
+}
+<h1 class="text-primary">Sipariş Listesi</h1>
+<table class="table table-bordered">
+    <thead>
+
+        <tr>
+            <th>Id</th>
+            <th>Müşteri</th>
+            <th>Kart Sahibi</th>
+            <th>Kart No</th>
+            <th>Son Kullanım Tarihi</th>
+            <th>Cvv</th>
+            <th>Adres</th>
+            <th>Ürün Sayısı</th>
+            <th>Ödenen Tutar</th>
+            <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.User.UserName</td>
+                <td>@item.FullName</td>
+                <td>@item.CardNumber</td>
+                <td>@item.ExpirationMonth/@item.ExpirationYear</td>
+                <td>@item.Cvv</td>
+                <td>@item.Adress</td>
+                <td>@item.OrderDetails.Sum(x=>x.Quantity)</td>
+                <td>@item.OrderDetails.Sum(x=>x.Price)</td>
+                <td>
+                    <a asp-area="Admin" asp-controller="Order" asp-action="DeleteOrder" asp-route-id="@item.Id" class="btn btn-danger">İptal Et</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+<script>
+    // $(document).ready(function () {
+    //     $("#select_role").change(function () {
+    //         var selected = $(this).val();
+    //         $.ajax({
+    //             url: '@Url.Action("Index", "User")',
+    //             type: 'post',
+    //             data: { id:selected },
+    //             dataType: 'json',
+    //             success: function (response)
+    //         })
+    //     })
+    // })
+</script>

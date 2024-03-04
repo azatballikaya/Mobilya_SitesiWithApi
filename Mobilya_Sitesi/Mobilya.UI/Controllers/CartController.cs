@@ -50,20 +50,22 @@ namespace Mobilya_Sitesi.Controllers
         public async Task<IActionResult> GoToCart(bool? id=null)
         {
             ResultCartViewModel resultCartViewModel;
+            resultCartViewModel =await GetCartByUserId();
             if (id == null)
             {
-             resultCartViewModel  = await GetCartByUserId();
+            
+                resultCartViewModel.IsSucessed = null;
                 return View(resultCartViewModel);
             }
-            if (id == true)
+           else if (id == true)
             {
-                ViewBag.Check = "Siparişiniz Başarı ile Alınmıştır...";
+                
+                resultCartViewModel.IsSucessed= true;
             }
             else
             {
-                ViewBag.Check = "Siparişiniz alınamadı!!!";
+                resultCartViewModel.IsSucessed=false;
             }
-            resultCartViewModel =await GetCartByUserId();
             return View(resultCartViewModel);
 
         }

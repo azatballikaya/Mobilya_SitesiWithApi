@@ -10,9 +10,26 @@
     <link rel="stylesheet" href="~/Mobilya_Sitesi.styles.css" asp-append-version="true" />
 </head>
 <body>
-
-    <section class="h-100 h-custom" style="background-color: #eee;">
-        <div class="container py-5 h-100">
+        <section class="h-100 h-custom" style="background-color: #eee;">
+            <div class="container py-5 h-100">
+           
+            @if (Model.IsSucessed != null)
+            {
+                if (Model.IsSucessed==true)
+                {
+                             <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Siparişiniz Başarı ile Alınmıştır!</h4>
+             
+                </div>
+                }
+                else
+                {
+                     <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Siparişiniz Alınamadı!</h4>
+             
+                </div>
+                }
+            }
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col">
                     <div class="card">
@@ -113,7 +130,7 @@
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-outline form-white">
-                                                            <input name="Cvv" type="password" id="typeText" class="form-control form-control-lg"
+                                                            <input name="Cvv"  id="typeText" class="form-control form-control-lg"
                                                                    placeholder="&#9679;&#9679;&#9679;" />
                                                             <label class="form-label" for="typeText">Cvv</label>
                                                         </div>

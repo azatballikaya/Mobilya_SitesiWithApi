@@ -1,0 +1,10 @@
+﻿@model ResultOrderViewModel
+<div class="alert alert-danger" role="alert">
+    <h1 class="text-primary"><span class="text-warning">@Model.Id numaralı</span> <span class="text-warning">@Model.OrderDetails.Count</span> adet ürün içeren <span class="text-warning">@Model.OrderDetails.Sum(x => x.Price) ₺</span>  tutarındaki siparişiniz iptal edilecektir!</h1>
+  <h1>Onaylıyor musunuz?</h1>
+</div>
+<div class="d-flex justify-content-center">
+
+    <a class="btn btn-primary btn-lg" asp-area="Admin" asp-controller="Home" asp-action="Index">Vazgeç</a>
+    <a class="btn btn-danger btn-lg" asp-area="Admin" asp-controller="Order" asp-action="Delete" asp-route-id="@Model.Id">İptal et</a>
+</div>
