@@ -1,6 +1,7 @@
 ﻿@{
 	Layout = null;
 }
+@model LoginUserViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,15 @@
 	<!--===============================================================================================-->
 </head>
 <body>
+	@if (ViewBag.Check)
+	{
+		
+	<div class="alert alert-success " role="alert">
+  <h4 class="alert-heading">Üyeliğiniz başarlılı bir şekilde oluşturuldu!</h4>
+  <p>Hemen giriş yapıp alışverişe başlayabilirsiniz...</p>
+</div>
+ 
+	}
 
 	<div class="limiter">
 		<div class="container-login100">
@@ -44,42 +54,23 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter username">
-						<input class="input100" type="text" name="UserName">
-						<span class="focus-input100" data-placeholder="Username"></span>
+						<input class="input100" asp-for="UserName">
+						<span class="focus-input100" data-placeholder="Kullanıcı adı..."></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="Password">
-						<span class="focus-input100" data-placeholder="Password"></span>
+						<input class="input100" asp-for="Password">
+						<span class="focus-input100" data-placeholder="Parola..."></span>
 					</div>
+					
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Kayıt Ol
 						</button>
 					</div>
 
-					<ul class="login-more p-t-190">
-						<li class="m-b-8">
-							<span class="txt1">
-								Forgot
-							</span>
-
-							<a href="#" class="txt2">
-								Username / Password?
-							</a>
-						</li>
-
-						<li>
-							<span class="txt1">
-								Don’t have an account?
-							</span>
-
-							<a href="#" class="txt2">
-								Sign up
-							</a>
-						</li>
-					</ul>
+					
 				</form>
 			</div>
 		</div>

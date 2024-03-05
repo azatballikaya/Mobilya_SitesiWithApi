@@ -14,7 +14,7 @@ namespace Mobilya_Sitesi.Models.ViewModels.Cart
 
         public decimal TotalPrice()
         {
-            return Convert.ToDecimal(CartItems.Sum(x => x.Product.Price));
+            return Convert.ToDecimal(CartItems.Sum(x => x.Product.Price* x.Quantity));
         }
 
     }

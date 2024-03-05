@@ -155,6 +155,30 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
             return RedirectToAction("Index");
            
         }
+        [HttpGet]
+        public async Task<IActionResult> GetProducts(int id=0)
+        {
+            var client = _httpClientFactory.CreateClient();
+            HttpResponseMessage responseMessage;
+            if (id == 0)
+            {
+                responseMessage = await client.GetAsync("http://localhost:5198/api/Product/GetAllProductsWithCategories");
+            }
+            else
+            {
+                responseMessage = await client.GetAsync($"http://localhost:5198/api/Product/GetProductsByCategoryId/{id}");
+
+            }
+
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ListProductViewModel>>(jsonData);
+                return PartialView("~/Areas/Admin/Views/Shared/_IndexProductPartialView.cshtml",values);
+            }
+            return PartialView("~/Areas/Admin/Views/Shared/_IndexProductPartialView.cshtml");
+        }
      
     }
 }

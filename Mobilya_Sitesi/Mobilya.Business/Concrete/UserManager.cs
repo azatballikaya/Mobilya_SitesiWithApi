@@ -57,16 +57,20 @@ namespace Mobilya.Business.Concrete
                 
             };
             newUser=_userDal.Insert(newUser);
-            newUser.UserRoles = createUserDTO.RoleIds.Select(r => new UserRole
+            var userRoles = createUserDTO.RoleIds.Select(r => new UserRole
             {
                 UserId = newUser.UserId,
                 RoleId = r
             }).ToList();
+            foreach (var userRole in userRoles)
+            {
+                _userRoleDal.Insert(userRole);
+            }
             _cartDal.Insert(new Cart
             {
                 UserId = newUser.UserId,
             });
-            _userDal.Update(newUser);
+           
         }
 
         public void DeleteUser(int id)
@@ -157,6 +161,12 @@ namespace Mobilya.Business.Concrete
             var values=_mapper.Map<List<ResultUserDTO>>(list);
             return values;
             
+        }
+        public List<ResultUserDTO> GetUsersByRoleId(int roleId)
+        {
+            var users = _userDal.GetAll(x => x.UserRoles.Any(y => y.RoleId == roleId),x=>x.Include(y=>y.UserRoles).ThenInclude(z=>z.Role));
+            var dtos = _mapper.Map<List<ResultUserDTO>>(users);
+            return dtos;
         }
     }
 }

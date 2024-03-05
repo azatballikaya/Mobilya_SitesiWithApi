@@ -12,7 +12,8 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="~/AdminLTE-3.2.0/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  
+    @await RenderSectionAsync("Scripts",required:false)
+    
 </head>
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
@@ -283,7 +284,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a asp-area="Admin" asp-controller="Order" asp-action="Index"  class="nav-link">
+                                    <a asp-area="Admin" asp-controller="Role" asp-action="AddRole"  class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Rol Ekle</p>
                                     </a>
@@ -481,6 +482,7 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="~/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="~/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -23,29 +23,20 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            //User listesi alınıyor
             var client=_httpClientFactory.CreateClient();
             HttpResponseMessage responseMessage;
-           
-
              responseMessage=  await client.GetAsync("http://localhost:5198/api/User/GetAllUsersWithRoles");
-            List<string> list = new List<string>();
-            list.Add("Superadmin");
-            list.Add("Admin");
-            list.Add("Customer");
-            
-
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData=await responseMessage.Content.ReadAsStringAsync();
-                var value=JsonConvert.DeserializeObject<List<ResultUserViewModel>>(jsonData);
-
-               var value2=value.Select(x=>x.Roles).ToList();
-                var newlist=value2.SelectMany(value=>value);
-                newlist=newlist.Distinct().ToList();
-                ViewBag.Roles = new SelectList(newlist,"RoleId","RoleName");
-
-
-                return View(value);
+                var valueUsers=JsonConvert.DeserializeObject<List<ResultUserViewModel>>(jsonData);
+                //Roller alınıyor
+                responseMessage = await client.GetAsync("http://localhost:5198/api/Role");
+                jsonData=await responseMessage.Content.ReadAsStringAsync();
+                var valueRoles = JsonConvert.DeserializeObject<List<ResultRoleViewModel>>(jsonData);
+                ViewBag.Roles=new SelectList(valueRoles,"RoleId","RoleName");
+                return View(valueUsers);
             }
             return View();
         }
@@ -75,6 +66,19 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
                 return View(value);
             }
             return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetUsersByRoleId(int id)
+        {
+            var client=_httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:5198/api/User/GetUsersByRoleId/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData=await responseMessage.Content.ReadAsStringAsync();
+                var values=JsonConvert.DeserializeObject<List<ResultUserViewModel>>(jsonData);
+                return PartialView("~/Areas/Admin/Views/Shared/_IndexUserPartialView.cshtml",values);
+            }
+            return PartialView("~/Areas/Admin/Views/Shared/_IndexUserPartialView.cshtml");
         }
         [HttpGet]
         public async Task<IActionResult> AddUser()

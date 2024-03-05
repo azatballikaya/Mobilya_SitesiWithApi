@@ -26,7 +26,7 @@ namespace Mobilya.DataAccess.Concrete.EntityFramework
 
         public List<Product> GetProductsByCategoryId(int id)
         {
-            return _context.Products.Where(p => p.CategoryId == id).ToList();
+            return _context.Products.Include(x=>x.Category).Where(p => p.CategoryId == id).ToList();
            
         }
         public List<Product> GetAllProductsWithCategories()

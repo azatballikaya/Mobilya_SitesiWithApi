@@ -15,6 +15,7 @@ namespace Mobilya.Business.Abstract
         List<ResultUserDTO> GetUserList();
         List<ResultUserDTO> GetUserListWithRoles();
         List<ResultUserDTO> GetUserListWithRoles(string roleName);
+        List<ResultUserDTO> GetUsersByRoleId(int roleId);
         void CreateUser(CreateUserDTO createUserDTO);
         void DeleteUser(int id);
         void UpdateUser(UpdateUserDTO updateUserDTO);

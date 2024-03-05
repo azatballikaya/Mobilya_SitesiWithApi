@@ -37,11 +37,20 @@ namespace Mobilya.Business.Concrete
             _cartItemDal.Update(cartItem);
         }
 
-        public void ChangeQuantity(int cartItemId, int quantity)
+        public ChangeQuantityDTO ChangeQuantity(int cartItemId, int quantity)
         {
             var cartItem=_cartItemDal.GetById(cartItemId);
             cartItem.Quantity = quantity;
             _cartItemDal.Update(cartItem);
+            cartItem=_cartItemDal.Get(x=>x.Id==cartItemId,x=>x.Include(y=>y.Product));
+            var cart = _cartDal.Get(x => x.CartId == cartItem.CartId, x => x.Include(y => y.CartItems).ThenInclude(z => z.Product));
+            ChangeQuantityDTO changeQuantityDTO = new ChangeQuantityDTO
+            {
+                CartItemPrice = cartItem.Quantity * cartItem.Product.Price,
+                CartTotalPrice = Convert.ToDouble(cart.TotalPrice())
+
+            };
+            return changeQuantityDTO ;
         }
 
         public void ClearCart(int userId)

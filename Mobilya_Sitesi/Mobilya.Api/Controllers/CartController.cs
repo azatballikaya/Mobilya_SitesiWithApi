@@ -44,6 +44,12 @@ namespace Mobilya.Api.Controllers
             _cartItemService.ClearCart(id);
             return Ok();
         }
+        [HttpPost("ChangeQuantity")]
+        public IActionResult ChangeQuantity(int cartItemId,int quantity)
+        {
+           var response= _cartItemService.ChangeQuantity(cartItemId, quantity);
+            return Ok(response);
+        }
         
            
     }

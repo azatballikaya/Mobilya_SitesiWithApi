@@ -1,0 +1,30 @@
+﻿@model List<ResultUserViewModel>
+<thead>
+
+    <tr>
+        <th>Id</th>
+        <th>UserName</th>
+        <th>Role</th>
+        <th>#</th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.UserId</td>
+            <td>@item.UserName</td>
+            <td>
+                @foreach (var role in item.Roles)
+                {
+                    @role.RoleName <span> </span>
+                }
+            </td>
+            <td>
+                <a asp-area="Admin" asp-controller="User" asp-action="Edit" asp-route-id="@item.UserId" class="btn btn-primary">Düzenle</a>
+                <a asp-area="Admin" asp-controller="User" asp-action="Delete" asp-route-id="@item.UserId" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+
+</tbody>

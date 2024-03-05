@@ -3,14 +3,14 @@
 <a href="/Admin/Home/AddProduct" class="btn btn-primary">Ürün ekle</a>
 <br />
 <br />
-<form action="/Admin/Home/Index" method="get">
-Kategori: 
-<select name="category"  asp-items="@ViewBag.Categories">
-    <option value="0">Tümü</option>
+
+<label class="mb-2"><b>Kategori:</b></label> 
+
+<select class="form-select text-primary" asp-items="@ViewBag.Categories" id="category_list" aria-label="Default select example">
+    <option value="0" selected>Tümü</option>
+
 </select>
-<button type="submit" class="btn btn-primary">Listele</button>
-</form>
-<table class="table table-bordered">
+<table class="table table-bordered" id="products_table">
     <thead>
         <tr>
             <th>Ürün Id</th>
@@ -22,18 +22,52 @@ Kategori:
         </tr>
     </thead>
     <tbody>
-        @foreach(var product in Model){
-        <tr>
-            <td>@product.ProductId</td>
-            <td>@product.ProductName</td>
-            <td><img src="~/img/@product.Image" style="height:150px; width:300px;"></td>
-            <td>@product.Price</td>
-            <td>@product.Description</td>
-            <td><a href="/Home/EditProduct/@product.ProductId" class="btn btn-primary">Edit</a>
-                    <a href="/Home/DeleteProduct/@product.ProductId" class="btn btn-danger">Delete</a>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.ProductName</td>
+                <td><img src="~/img/@product.Image" style="height:150px; width:300px;"></td>
+                <td>@product.Price</td>
+                <td>@product.Description</td>
+                <td>
+                    <a href="/Home/EditProduct/@product.ProductId" class="btn btn-primary">Düzenle</a>
+                    <a href="/Home/DeleteProduct/@product.ProductId" class="btn btn-danger">Sil</a>
                 </td>
-        </tr>
+            </tr>
         }
     </tbody>
 </table>
 
+<script>
+    // $(document).ready(function () {
+    //     $('#category_list').on('change', function () {
+    //         var selectedValue = $(this).val();
+    //         console.log(selectedValue);
+    //     })
+    // });
+  
+    $(document).ready(function(){
+        $("#category_list").on('change',function () {
+
+            var value = $(this).val();
+            $.ajax({
+                type: 'GET',
+                dataType:'html',
+                
+                url: `@Url.Action("GetProducts", "Home",new {Area="Admin"})`+`/${value}`,
+                success: function (response) {
+                    $("#products_table").html(response);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+
+            });
+        })
+    })
+</script>
+@section Scripts {
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+}

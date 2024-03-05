@@ -69,5 +69,18 @@ namespace Mobilya_Sitesi.Controllers
             return View(resultCartViewModel);
 
         }
+        [HttpPost]
+        public async Task<JsonResult> ChangeQuantity(ChangeQuantityViewModel changeQuantityViewModel)
+        {
+            var client=_httpClientFactory.CreateClient();
+            var jsonData= JsonConvert.SerializeObject(changeQuantityViewModel);
+            StringContent content=new StringContent(jsonData,Encoding.UTF8,"application/json");
+            var responseMessage = await client.PostAsync("http://localhost:5198/api/Cart/ChangeQuantity", content);
+            if(responseMessage.IsSuccessStatusCode)
+            {
+                return Json(await responseMessage.Content.ReadAsStringAsync());
+            }
+            return Json(null);
+        }
     }
 }

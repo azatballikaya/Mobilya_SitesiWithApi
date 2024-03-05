@@ -42,7 +42,12 @@ namespace Mobilya.Api.Controllers
             var user = _userService.GetUserWtihRoles(id);
             return Ok(user);
         }
-
+        [HttpGet("GetUsersByRoleId/{id}")]
+        public IActionResult GetUsersByRoleId(int id)
+        {
+            var users = _userService.GetUsersByRoleId(id);
+            return Ok(users);
+        }
         [HttpGet("GetUsersWithRolesByName/{id}")]
         public IActionResult GetUsersByRole(string id)
         {

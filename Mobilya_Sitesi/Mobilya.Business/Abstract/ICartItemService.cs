@@ -15,7 +15,7 @@ namespace Mobilya.Business.Abstract
         void DeleteCartItem(int cartItemId);
         List<ResultCartItemDTO> GetAllCartItemsByUserId(int userId);
         void ClearCart(int userId);
-        void ChangeQuantity(int cartItemId, int quantity);
+        ChangeQuantityDTO ChangeQuantity(int cartItemId, int quantity);
         int ItemCountAsync(int cartId);
 
 

@@ -24,8 +24,9 @@ namespace Mobilya_Sitesi.Controllers
 
         [HttpGet]
         
-        public IActionResult Index()
+        public IActionResult Index(bool id=false)
         {
+            ViewBag.Check = id ? true : false;
 			if (User.Identity.IsAuthenticated)
 			{
 				return Redirect("/Admin/Home/Index");
@@ -77,7 +78,37 @@ namespace Mobilya_Sitesi.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-			return RedirectToAction("User", "Home");
+			return RedirectToAction("Home", "User");
+		}
+        [HttpGet]
+        public async Task<IActionResult> Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterUserViewModel registerUserViewModel)
+        {
+            if (!ModelState.IsValid) {
+           
+            return View(registerUserViewModel);
+
+
+			}
+            else
+            {
+				registerUserViewModel.RoleIds.Add(6);
+				var client = _httpClientFactory.CreateClient();
+				var jsonData = JsonConvert.SerializeObject(registerUserViewModel);
+				StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+				var responseMessage = await client.PostAsync("http://localhost:5198/api/User/AddUser", content);
+				if (responseMessage.IsSuccessStatusCode)
+				{
+					return RedirectToAction("Index", true);
+				}
+				return View(registerUserViewModel);
+
+			}
+
 		}
     }
 }
