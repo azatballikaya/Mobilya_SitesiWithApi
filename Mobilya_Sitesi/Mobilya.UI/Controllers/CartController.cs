@@ -69,6 +69,7 @@ namespace Mobilya_Sitesi.Controllers
             return View(resultCartViewModel);
 
         }
+  
         [HttpPost]
         public async Task<JsonResult> ChangeQuantity(int cartItemId, int quantity)
         {

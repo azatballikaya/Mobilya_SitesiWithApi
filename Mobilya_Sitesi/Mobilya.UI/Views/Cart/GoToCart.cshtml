@@ -178,84 +178,14 @@
             </div>
         </div>
     </section>
-@* 
-<h1 class="display-6 text-primary">Sepet</h1>
-<hr />
-@if (Model.CartItems.Count == 0)
-{
-    <div class="alert alert-warning display-6 p-3">
-        <p class="mb-0">Sepetinizde ürün bulunmamaktadır.</p>
-    </div>
-}
-else
-{
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th width="50">Id</th>
-                <th>Ürün</th>
-                <th width="150">Fiyat</th>
-                <th width="90">Adet</th>
-                <th width="130">Toplam</th>
-                <th width="100">#</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (var i = 0; i < Model.CartItems.Count; i++)
-            {
-                <tr>
-                    <td>@Model.CartItems[i].Id</td>
-                    <td>
-                        <img src="~/img/@Model.CartItems[i].Product.Image" style="width:30px" />
-                        <span class="ms-2">@Model.CartItems[i].Product.ProductName</span>
-                    </td>
-                    <td class="align-middle">@($"{Model.CartItems[i].Product.Price:C0}")</td>
-                    <td class="align-middle">
-                        <form id="form_@Model.CartItems[i].Id" asp-area="" asp-controller="Cart" asp-action="ChangeQuantity" method="post">
-                            <input type="hidden" value="@Model.CartItems[i].Id" name="Id" />
-                            <input onchange="document.getElementById('form_@Model.CartItems[i].Id').submit();" class="form-control" type="number" value="@Model.CartItems[i].Quantity" name="Quantity" />
-                        </form>
-                    </td>
-                    @* <td>@($"{(item.Product.Price * item.Quantity):C0}")</td> *@
-                  @*   @{
-                        var total = (Model.CartItems[i].Product.Price * Model.CartItems[i].Quantity);
-                    }
-                    <td class="align-middle">@($"{total:C0}")</td>
-                    <td class="align-middle">
-                        <a asp-area=""
-                           asp-controller="Cart"
-                           asp-action="RemoveItem"
-                           asp-route-id="@Model.CartItems[i].Id"
-                           class="btn btn-danger bnt-sm">Çıkar</a>
-                    </td>
-                </tr>
-            }
 
-        </tbody>
-        <tfooter>
-            <tr>
-                <td colspan="4" class="text-end text-danger fw-bold align-middle">Toplam Tutar:</td>
-                <td colspan="2" class="fs-2 display-6 text-primary">@($"{Model.TotalPrice():C0}")</td>
-            </tr>
-            <tr>
-                <td colspan="6" class="text-end ">
-                    <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">Alışverişe Devam Et</a>
-                    <a class="btn btn-success" asp-area="" asp-controller="Cart" asp-action="CheckOut">Ödeme Adımına Geç</a>
-                </td>
-            </tr>
-        </tfooter>
-    </table>
-} *@ 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     
+
 </body>
-<form action="/Cart/ChangeQuantity" method="post">
-    <input type="text" name="cartItemId"/>
-    <input type="text" name="quantity"/>
-    <button type="submit">gönder</button>
-</form>
+
 </html>
 <script>
    

@@ -119,11 +119,27 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
             return View(product);
         }
         [HttpPost]
-        public async Task<IActionResult> EditProduct(EditProductViewModel editProductViewModel,string ImageURL)
+        public async Task<IActionResult> EditProduct(EditProductViewModel editProductViewModel,IFormFile ImageURL)
         {
             
-            if (ImageURL!=null)
-                editProductViewModel.Image = ImageURL;
+            if (ImageURL != null)
+            {
+                var directory=Directory.GetCurrentDirectory();
+                directory = Path.Combine(directory, "wwwroot/img");
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+                var extension=Path.GetExtension(ImageURL.FileName);
+                var fileName = $"{Guid.NewGuid()}{extension}";
+
+                var path=Path.Combine(directory, fileName);
+                using (var stream=new FileStream(path,FileMode.Create))
+                {
+                    await ImageURL.CopyToAsync(stream);
+                }
+            }
+               
            var client=_httpClientFactory.CreateClient();   
             var jsonData=JsonConvert.SerializeObject(editProductViewModel);
             StringContent content=new StringContent(jsonData,Encoding.UTF8,"application/json");

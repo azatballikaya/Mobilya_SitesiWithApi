@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z/MaIE3qjTaTe7OzBrSnB8/BzaelrbV9kM39nxsdyj9n5mQpuMRcmbHANf/aD4/Y9E2coyxdxjJPPNrjBJ5UnA==",
+  "dgSpecHash": "yLtYtRvrR0CzDY9wzIIX3f1ly4cgH4uOPNL9RprZZaTLhoQR8sWh0+29O5S+G0B9Td/fuy4C2YC3DFO+X/I0sA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Mobilya_SitesiWithApi\\Mobilya_Sitesi\\Mobilya.Api\\Mobilya.Api.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Azat\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Azat\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Azat\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Azat\\.nuget\\packages\\iyzipay\\2.1.61\\iyzipay.2.1.61.nupkg.sha512",
     "C:\\Users\\Azat\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.12\\microsoft.aspnetcore.jsonpatch.7.0.12.nupkg.sha512",
     "C:\\Users\\Azat\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.12\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.12.nupkg.sha512",
     "C:\\Users\\Azat\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.13\\microsoft.aspnetcore.openapi.7.0.13.nupkg.sha512",

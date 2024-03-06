@@ -67,7 +67,7 @@ namespace Mobilya_Sitesi.Controllers
                         return RedirectToAction("Index", "Home");
 
                     }
-                    return Redirect("~/Admin/Home/Index");
+                    return Redirect("~/Admin/User/Home");
 
 
                 }

@@ -441,3 +441,4 @@ C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Si
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.Api\obj\Debug\net7.0\Mobilya.Api.pdb
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.Api\obj\Debug\net7.0\Mobilya.Api.genruntimeconfig.cache
 C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.Api\obj\Debug\net7.0\ref\Mobilya.Api.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Mobilya_SitesiWithApi\Mobilya_Sitesi\Mobilya.Api\bin\Debug\net7.0\Iyzipay.dll
