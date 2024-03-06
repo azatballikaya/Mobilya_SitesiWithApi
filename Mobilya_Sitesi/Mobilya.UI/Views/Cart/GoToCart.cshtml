@@ -153,7 +153,7 @@
 
                                             <div class="d-flex justify-content-between mb-4">
                                                 <p class="mb-2">Toplam Ödeme</p>
-                                                <p class="mb-2" id="cartPrice">@Model.TotalPrice().ToString("N") ₺</p>
+                                                <p class="mb-2" id="cartPrice">@Model.TotalPrice().ToString("N") ₺ </p>
                                             </div>
 
                                             <button type="submit" class="btn btn-info btn-block btn-lg">
@@ -251,39 +251,38 @@ else
     <script src="~/js/site.js" asp-append-version="true"></script>
     
 </body>
-
+<form action="/Cart/ChangeQuantity" method="post">
+    <input type="text" name="cartItemId"/>
+    <input type="text" name="quantity"/>
+    <button type="submit">gönder</button>
+</form>
 </html>
 <script>
    
 
 
 
-         function ChangeQuantity(cartItemId){
-         var quantity1=$(`#cartItemQuantity_${cartItemId}`).val();
-             var cartItemId2 = cartItemId;
-             $.post("http://localhost:5058/Cart/ChangeQuantity",{cartItemId=`${cartItemId}`,quantity=quantity1},function(response){
-                      var data = JSON.parse(response);
-        $(`#cartItemPrice_${cartItemId}`).html(data.cartItemPrice);
-        $(`#cartPrice_${cartItemId}`).html(data.cartTotalPrice);
-    });
-        // $.ajax({
-        //     type:'POST',
-        //     url:`@Url.Action("ChangeQuantity","Cart")`,
+         function ChangeQuantity(id){
+           let quantity1=  $(`#cartItemQuantity_${id}`).val();
+             let id1 = id;
+        $.ajax({
+            type:'post',
+            url:`http://localhost:5058/Cart/ChangeQuantity`,
            
-        //     dataType:'json',
-        //     data: {
-        //         cartItemId=cartItemId2,
-        //     quantity=quantity1
-        //     },
-        //     success:function(response){
-        //         var data = JSON.parse(response);
-        //        $(`#cartItemPrice_${cartItemId}`).html(data.cartItemPrice);
-        //        $(`#cartPrice_${cartItemId}`).html(data.cartTotalPrice);
-        //     },
-        //     error:function(err){
-        //         console.log(err);
-        //     }
-        // });
+            datatype:'json',
+            data: {
+                cartItemId:`${id1}`,
+                quantity:`${quantity1}`
+            },
+            success:function(response){
+                var data = JSON.parse(response);
+               $(`#cartItemPrice_${id1}`).html(data.cartItemPrice+'₺');
+               $(`#cartPrice`).html(data.cartTotalPrice+'₺');
+            },
+            error:function(err){
+                console.log(err);
+            }
+        });
     };
     
 

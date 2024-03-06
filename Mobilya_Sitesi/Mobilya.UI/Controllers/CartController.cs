@@ -70,8 +70,13 @@ namespace Mobilya_Sitesi.Controllers
 
         }
         [HttpPost]
-        public async Task<JsonResult> ChangeQuantity(ChangeQuantityViewModel changeQuantityViewModel)
+        public async Task<JsonResult> ChangeQuantity(int cartItemId, int quantity)
         {
+            ChangeQuantityViewModel changeQuantityViewModel = new ChangeQuantityViewModel()
+            {
+                CartItemId = cartItemId,
+                Quantity = quantity
+            };
             var client=_httpClientFactory.CreateClient();
             var jsonData= JsonConvert.SerializeObject(changeQuantityViewModel);
             StringContent content=new StringContent(jsonData,Encoding.UTF8,"application/json");

@@ -45,9 +45,9 @@ namespace Mobilya.Api.Controllers
             return Ok();
         }
         [HttpPost("ChangeQuantity")]
-        public IActionResult ChangeQuantity(int cartItemId,int quantity)
+        public IActionResult ChangeQuantity(ChangeQuantityDTO changeQuantityDTO)
         {
-           var response= _cartItemService.ChangeQuantity(cartItemId, quantity);
+           var response= _cartItemService.ChangeQuantity(changeQuantityDTO.CartItemId, changeQuantityDTO.Quantity);
             return Ok(response);
         }
         
