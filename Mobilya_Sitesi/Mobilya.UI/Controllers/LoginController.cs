@@ -24,12 +24,13 @@ namespace Mobilya_Sitesi.Controllers
 
         [HttpGet]
         
-        public IActionResult Index(bool id=false)
+        public IActionResult Index(bool? id=null)
         {
-            ViewBag.Check = id ? true : false;
+
+            ViewBag.Check = id;
 			if (User.Identity.IsAuthenticated)
 			{
-				return Redirect("/Admin/Home/Index");
+				return Redirect("/Home/Index");
 			}
 			return View();
         }
@@ -67,12 +68,12 @@ namespace Mobilya_Sitesi.Controllers
                         return RedirectToAction("Index", "Home");
 
                     }
-                    return Redirect("~/Admin/User/Home");
+                    return Redirect("~/Admin/User/Index");
 
 
                 }
             }
-            return View(loginUserViewModel);
+            return Redirect("~/Login/Index/false");
           
         }
         public async Task<IActionResult> Logout()

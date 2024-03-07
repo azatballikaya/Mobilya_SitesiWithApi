@@ -99,6 +99,25 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProduct(AddProductViewModel addProductViewModel)
         {
+            if (addProductViewModel.ImageURL != null)
+            {
+                var directory = Directory.GetCurrentDirectory();
+                directory = Path.Combine(directory, "wwwroot/img");
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+                var extension = Path.GetExtension(addProductViewModel.ImageURL.FileName);
+                var fileName = $"{Guid.NewGuid()}{extension}";
+
+                var path = Path.Combine(directory, fileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await addProductViewModel.ImageURL.CopyToAsync(stream);
+                }
+                addProductViewModel.Image =fileName;
+            }
+            
             var client=_httpClientFactory.CreateClient();
             var jsonData=JsonConvert.SerializeObject(addProductViewModel);
             StringContent stringContent = new StringContent(jsonData,Encoding.UTF8,"application/json");
@@ -138,6 +157,7 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
                 {
                     await ImageURL.CopyToAsync(stream);
                 }
+                editProductViewModel.Image = fileName; ;
             }
                
            var client=_httpClientFactory.CreateClient();   

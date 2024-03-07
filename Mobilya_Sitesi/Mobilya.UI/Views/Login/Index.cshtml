@@ -32,14 +32,28 @@
 	<!--===============================================================================================-->
 </head>
 <body>
-	@if (ViewBag.Check)
+	@if (ViewBag.Check == true)
 	{
-		
-	<div class="alert alert-success " role="alert">
-  <h4 class="alert-heading">Üyeliğiniz başarlılı bir şekilde oluşturuldu!</h4>
-  <p>Hemen giriş yapıp alışverişe başlayabilirsiniz...</p>
-</div>
- 
+
+		<div class="alert alert-success " role="alert">
+			<h4 class="alert-heading">Üyeliğiniz başarlılı bir şekilde oluşturuldu!</h4>
+			<p>Hemen giriş yapıp alışverişe başlayabilirsiniz...</p>
+		</div>
+
+	}
+
+	
+	@{
+		string error;
+		if (ViewBag.Check == false)
+		{
+			error = "Hatalı Kullanıcı adı veya parola!!!";
+
+		}
+		else
+		{
+			error = "";
+		}
 	}
 
 	<div class="limiter">
@@ -51,6 +65,9 @@
 					</span>
 					<span class="login100-form-avatar">
 						<img src="~/Login_v6/images/avatar-01.jpg" alt="AVATAR">
+					</span>
+					<span class="login100-form-title text-danger p-b-70">
+						@error
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter username">
@@ -66,7 +83,7 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Kayıt Ol
+							Giriş Yap
 						</button>
 					</div>
 

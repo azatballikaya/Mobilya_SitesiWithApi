@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Mobilya_Sitesi.Models.ViewModels.Cart;
 using Newtonsoft.Json;
 using System.Security.Claims;
@@ -6,6 +7,7 @@ using System.Text;
 
 namespace Mobilya_Sitesi.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

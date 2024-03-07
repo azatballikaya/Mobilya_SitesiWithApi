@@ -2,7 +2,7 @@
 
 
 <h1>Ürün Ekleme Sayfası</h1>
-<form action="/Admin/Home/AddProduct" method="post">
+<form action="/Admin/Home/AddProduct" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="ProductName" class="form-label">Ürün Adı</label>
         <input type="text" name="ProductName" class="form-control" >
@@ -17,8 +17,8 @@
         <input type="text" name="Description" class="form-control" >
     </div>
     <div class="mb-3 ">
-        <label for="Image" class="form-label">Resim</label>
-        <input type="file" name="Image" class="form-control">
+        <label for="ImageURL" class="form-label">Resim</label>
+        <input type="file" name="ImageURL" class="form-control">
     </div>
     <select name="CategoryId" asp-items="@ViewBag.Categories"></select>
     <button type="submit" class="btn btn-primary">Kaydet</button>

@@ -71,7 +71,8 @@ namespace Mobilya_Sitesi.Areas.Admin.Controllers
         public async Task<IActionResult> GetUsersByRoleId(int id)
         {
             var client=_httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:5198/api/User/GetUsersByRoleId/{id}");
+            
+            var responseMessage = await client.GetAsync(id!=0 ? $"http://localhost:5198/api/User/GetUsersByRoleId/{id}" : "http://localhost:5198/api/User/GetAllUsersWithRoles");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData=await responseMessage.Content.ReadAsStringAsync();

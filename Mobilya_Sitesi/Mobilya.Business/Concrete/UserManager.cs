@@ -95,9 +95,14 @@ namespace Mobilya.Business.Concrete
                 loginUserDTO.UserName = user.UserName;
                 loginUserDTO.Password = user.Password;
                 loginUserDTO.RoleNames = user.UserRoles.Select(x => x.Role.RoleName).ToList();
+				return loginUserDTO;
+			}
+            else
+            {
+                return null;
 
             }
-            return loginUserDTO;
+
         }
 
         public List<ResultUserDTO> GetUserList()

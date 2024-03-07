@@ -80,6 +80,9 @@
                                     
 
                                 </div>
+                                @if(Model.CartItems==null || Model.CartItems.Count > 0)
+                                {
+                                    
                                 <div class="col-lg-5">
 
                                     <div class="card bg-primary text-white rounded-3">
@@ -169,6 +172,7 @@
                                     </div>
 
                                 </div>
+                                }
 
                             </div>
 
