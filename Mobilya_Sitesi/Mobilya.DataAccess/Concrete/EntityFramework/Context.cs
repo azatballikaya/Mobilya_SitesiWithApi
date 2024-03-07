@@ -31,6 +31,7 @@ namespace Mobilya.DataAccess.Concrete.EntityFramework
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Order> Orders{ get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Advice> Advices { get; set; }
 
 
     }

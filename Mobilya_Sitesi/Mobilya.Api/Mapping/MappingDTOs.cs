@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Mobilya.Business.DTOs.AdviceDTOs;
 using Mobilya.Business.DTOs.CartDTOs;
 using Mobilya.Business.DTOs.CartItemDTOs;
 using Mobilya.Business.DTOs.CategoryDTOs;
@@ -61,6 +62,9 @@ namespace Mobilya.Business.Mapping
             CreateMap<OrderDetail, ResultOrderDetailDTO>().ReverseMap();
             CreateMap<OrderDetail, UpdateOrderDetailDTO>().ReverseMap();
             CreateMap<OrderDetail, CreateOrderDetailDTO>().ReverseMap();
+
+            CreateMap<Advice,ResultAdviceDTO>().ReverseMap();
+            CreateMap<Advice,CreateAdviceDTO>().ReverseMap();
 
 
 

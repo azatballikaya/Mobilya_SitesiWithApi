@@ -1,0 +1,25 @@
+﻿@model ResultAdviceViewModel
+<table class="table table-bordered">
+    <tr>
+        <th width="20">Id:</th>
+        <td>@Model.AdviceId</td>
+    </tr>
+    <tr>
+        <th width="20">Ad Soyad:</th>
+        <td>@Model.FullName</td>
+    </tr>
+    <tr>
+        <th width="20">Email:</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th width="20">Konu:</th>
+        <td>@Model.Subject</td>
+    </tr>
+    <tr>
+        <th width="20">İçerik:</th>
+        <td>@Model.Description</td>
+    </tr>
+ 
+</table>
+<a asp-area="Admin" asp-controller="Advice" asp-action="Delete" asp-route-id="@Model.AdviceId" class="btn btn-danger btn-lg" style="float:right ">Öneriyi Sil</a>

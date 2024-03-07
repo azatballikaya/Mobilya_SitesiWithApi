@@ -54,6 +54,9 @@ builder.Services.AddScoped<IOrderService, OrderManager>();
 
 builder.Services.AddScoped<IOrderDetailDal,EfOrderDetailDal>();
 
+builder.Services.AddScoped<IAdviceDal,EfAdviceDal>();
+builder.Services.AddScoped<IAdviceService,AdviceManager>();
+
 
 
 
