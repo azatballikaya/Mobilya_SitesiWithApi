@@ -26,7 +26,7 @@ namespace Mobilya.Api.Controllers
             _cartItemService.AddCartItemToCart(createCartItemDTO.CartId, createCartItemDTO.ProductId);
             return Ok();
         }
-        [HttpGet("RemoveFromCart/{id}")]
+        [HttpDelete("RemoveFromCart/{id}")]
         public IActionResult DeleteCartItemFromCart(int id)
         {
             _cartItemService.DeleteCartItem(id);

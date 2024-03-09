@@ -31,7 +31,7 @@ namespace Mobilya_Sitesi.Controllers
             return null;
         } 
         
-        public async Task<IActionResult> AddToCart(int id)
+        public async Task<JsonResult> AddToCart(int id)
         {
             var client = _httpClientFactory.CreateClient();
             var cart= await GetCartByUserId();
@@ -46,8 +46,16 @@ namespace Mobilya_Sitesi.Controllers
             var jsonData = JsonConvert.SerializeObject(addToCartViewModel);
             StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
             var responseMessage = await client.PostAsync("http://localhost:5198/api/Cart/AddToCart", content);
-           
-            return RedirectToAction("Index","User");
+            cart = await GetCartByUserId();
+
+
+
+
+            return Json(new ResponseAddToCartViewModel { CartItemsCount =  cart.CartItems.Count(), IsSuccess = true });
+
+
+
+
         }
         public async Task<IActionResult> GoToCart(bool? id=null)
         {
@@ -71,7 +79,12 @@ namespace Mobilya_Sitesi.Controllers
             return View(resultCartViewModel);
 
         }
-  
+        public async Task<IActionResult> DeleteCartItem(int id)
+        {
+            var client=_httpClientFactory.CreateClient();
+            var responseMessage = await client.DeleteAsync($"http://localhost:5198/api/Cart/RemoveFromCart/{id}");
+            return RedirectToAction("GoToCart");
+        }
         [HttpPost]
         public async Task<JsonResult> ChangeQuantity(int cartItemId, int quantity)
         {
