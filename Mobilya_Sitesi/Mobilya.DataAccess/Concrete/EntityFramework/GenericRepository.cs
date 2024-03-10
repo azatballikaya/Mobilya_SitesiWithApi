@@ -43,9 +43,14 @@ namespace Mobilya.DataAccess.Concrete.EntityFramework
             {
                 query = include(query);
             }
-            return query.FirstOrDefault(filter);
-            
-           
+            if(filter != null)
+            {
+                query=query.Where(filter);
+            }
+            return query.FirstOrDefault();
+
+
+
         }
         public T GetById(int id)
         {

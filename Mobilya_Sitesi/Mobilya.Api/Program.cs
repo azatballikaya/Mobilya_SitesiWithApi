@@ -19,7 +19,8 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 });
 builder.Services.AddDbContext<Context>(options =>
 {
-    options.UseSqlServer("server=DESKTOP-NOPPPVL\\SQLEXPRESS; database=MobilyaApiDb; integrated security=true; TrustServerCertificate = True;");
+    //options.UseSqlServer("server=DESKTOP-NOPPPVL\\SQLEXPRESS; database=MobilyaApiDb; integrated security=true; TrustServerCertificate = True;");
+    options.UseSqlite("Data Source=database.db");
 });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

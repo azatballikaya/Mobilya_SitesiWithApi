@@ -40,10 +40,10 @@ namespace Mobilya_Sitesi.Controllers
             StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
             var responseMessage = await client.PostAsync("http://localhost:5198/api/Order/CreateOrder",content);
             if(responseMessage.IsSuccessStatusCode) {
-                return RedirectToAction("Home", "User");
+                return RedirectToAction("GoToCart", "Cart", new {id=true});
                 
             }
-            return RedirectToAction("GoToCart","Cart","false");
+            return RedirectToAction("GoToCart", "Cart", new {id=false});
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Mobilya.Business.Abstract
 {
     public interface IOrderService
     {
-        void CreateOrder(CreateOrderDTO createOrderDTO);
+        bool CreateOrder(CreateOrderDTO createOrderDTO);
         void UpdateOrder(UpdateOrderDTO updateOrderDTO);
         void DeleteOrder(int id);
         void AddOrderDetailToOrder(int quantity, int productId);

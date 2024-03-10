@@ -65,10 +65,10 @@ namespace Mobilya_Sitesi.Controllers
                     await HttpContext.SignInAsync(principal);
                     if (admin.RoleNames.Contains("Customer"))
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Home", "User");
 
                     }
-                    return Redirect("~/Admin/User/Index");
+                    return Redirect("~/Admin/Home/Index");
 
 
                 }
@@ -82,8 +82,9 @@ namespace Mobilya_Sitesi.Controllers
 			return RedirectToAction("Home", "User");
 		}
         [HttpGet]
-        public async Task<IActionResult> Register()
+        public async Task<IActionResult> Register(bool id=true)
         {
+            ViewBag.IsSuccess = id ? "" : "Kullanıcı adı alınmış..."; 
             return View();
         }
         [HttpPost]
@@ -97,7 +98,7 @@ namespace Mobilya_Sitesi.Controllers
 			}
             else
             {
-				registerUserViewModel.RoleIds.Add(6);
+				registerUserViewModel.RoleIds.Add(3);
 				var client = _httpClientFactory.CreateClient();
 				var jsonData = JsonConvert.SerializeObject(registerUserViewModel);
 				StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
@@ -106,7 +107,7 @@ namespace Mobilya_Sitesi.Controllers
 				{
 					return RedirectToAction("Index", true);
 				}
-				return View(registerUserViewModel);
+				return RedirectToAction("Register", routeValues: new {id="false"});
 
 			}
 

@@ -44,7 +44,7 @@ namespace Mobilya.Business.Concrete
             });
         }
 
-        public void CreateOrder(CreateOrderDTO createOrderDTO)
+        public bool CreateOrder(CreateOrderDTO createOrderDTO)
         {
             
           
@@ -156,7 +156,10 @@ namespace Mobilya.Business.Concrete
                     });
                 }
                  _cartItemService.ClearCart(createOrderDTO.UserId);
+                return true;
             }
+            return false;
+            
         }
        
         public void DeleteOrder(int id)

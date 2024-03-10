@@ -61,21 +61,7 @@ namespace Mobilya_Sitesi.Controllers
         {
             ResultCartViewModel resultCartViewModel;
             resultCartViewModel =await GetCartByUserId();
-            if (id == null)
-            {
-            
-                resultCartViewModel.IsSucessed = null;
-                return View(resultCartViewModel);
-            }
-           else if (id == true)
-            {
-                
-                resultCartViewModel.IsSucessed= true;
-            }
-            else
-            {
-                resultCartViewModel.IsSucessed=false;
-            }
+            resultCartViewModel.IsSucessed = id;
             return View(resultCartViewModel);
 
         }

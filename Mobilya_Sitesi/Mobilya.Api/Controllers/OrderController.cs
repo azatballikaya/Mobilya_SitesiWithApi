@@ -37,8 +37,13 @@ namespace Mobilya.Api.Controllers
         [HttpPost("CreateOrder")]
         public IActionResult CreateOrder(CreateOrderDTO createOrderDTO)
         {
-            _orderService.CreateOrder(createOrderDTO);
+           bool isSuccess= _orderService.CreateOrder(createOrderDTO);
+            if (isSuccess)
+            {
+
             return Ok();
+            }
+            return BadRequest();
         }
         [HttpDelete("{id}")]
         public IActionResult DeleteOrder(int id)

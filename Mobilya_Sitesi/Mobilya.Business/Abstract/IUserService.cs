@@ -11,6 +11,7 @@ namespace Mobilya.Business.Abstract
     public interface IUserService
     {
         ResultUserDTO GetUser(int id);
+        ResultUserDTO GetUserByUserName(string userName);
         ResultUserDTO GetUserWtihRoles(int id);
         List<ResultUserDTO> GetUserList();
         List<ResultUserDTO> GetUserListWithRoles();

@@ -49,6 +49,8 @@ namespace Mobilya.Business.Concrete
 
         public void CreateUser(CreateUserDTO createUserDTO)
         {
+            
+                
 
             User newUser= new User()
             {
@@ -85,10 +87,16 @@ namespace Mobilya.Business.Concrete
             var user = _mapper.Map<ResultUserDTO>(value);
             return user;
         }
+		public ResultUserDTO GetUserByUserName(string userName)
+		{
+			var value = _userDal.Get(x=>x.UserName == userName);
+			var user = _mapper.Map<ResultUserDTO>(value);
+			return user;
+		}
 
-        public LoginUserDTO? GetUserByLogin(LoginUserDTO loginUserDTO)
+		public LoginUserDTO? GetUserByLogin(LoginUserDTO loginUserDTO)
         {
-            User user=_userDal.Get(x=>x.UserName==loginUserDTO.UserName && loginUserDTO.Password==loginUserDTO.Password, x=>x.Include(y=>y.UserRoles).ThenInclude(z=>z.Role));
+            User user=_userDal.Get(x=>x.UserName==loginUserDTO.UserName && x.Password==loginUserDTO.Password, x=>x.Include(y=>y.UserRoles).ThenInclude(z=>z.Role));
             if(user!=null)
             {
                 loginUserDTO.UserId = user.UserId;

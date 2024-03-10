@@ -1,10 +1,10 @@
 ﻿@model List<ResultUserViewModel>
 <form asp-area="Admin" asp-controller="User" asp-action="Index" method="post">
-
-<select asp-items="@ViewBag.Roles" id="select_role" name="id">
+    <strong>Rol:</strong>
+    <select asp-items="@ViewBag.Roles" id="select_role" name="id">
    <option value="0">Tümü</option> 
 </select>
-<button type="submit" class="btn btn-primary">Listele</button>
+
 </form>
 <h1 class="text-primary">Üye Listesi</h1>
 <table class="table table-bordered" id="users_table">

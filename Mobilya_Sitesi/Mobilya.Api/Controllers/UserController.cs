@@ -71,6 +71,10 @@ namespace Mobilya.Api.Controllers
         [HttpPost("AddUser")]
         public IActionResult AddUser(CreateUserDTO createUserDTO)
         {
+            var user = _userService.GetUserByUserName(createUserDTO.UserName);
+            if(user!=null)
+                return BadRequest();
+
             _userService.CreateUser(createUserDTO);
             return Ok();
         }

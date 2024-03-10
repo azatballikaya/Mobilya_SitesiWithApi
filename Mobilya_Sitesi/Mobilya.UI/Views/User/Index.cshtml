@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Villa Agency - Property Listing by TemplateMo</title>
+    <title>Mobilya Dünyası</title>
 
     <!-- Bootstrap core CSS -->
     <link href="~/website-template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -99,6 +99,7 @@
                                 {
                                     <li><a href="/Admin/Home/Index">Admin Paneli</a></li>
                                 }
+                                <li><a href="/Login/Logout">Çıkış Yap</a></li>
                                 <li><a asp-area="" asp-controller="Cart" asp-action="GoToCart"><i class="fa fa-calendar"></i> Sepete Git<span class="position-absolute top-25 start-100 translate-middle badge rounded-pill bg-danger" id="span_cartItemsCount">@(ViewBag.CartItemsCount !=null ? ViewBag.CartItemsCount : "")</span></a></li>
 
                               
@@ -242,7 +243,7 @@
                     
                     
                         $("#div_isSuccess").addClass("alert alert-success");
-                        $("#div_isSuccess").html('Ürün sepeete eklendi...');
+                        $("#div_isSuccess").html('Ürün sepete eklendi...');
                    
                 $("#span_cartItemsCount").html(response.cartItemsCount.toString());
                     
